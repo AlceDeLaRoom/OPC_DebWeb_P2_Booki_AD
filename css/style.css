@@ -16,7 +16,45 @@
 body {
     display: flex;
     justify-content: center;
+    max-width: 1440px;
+    min-width: 320px;
+    margin: 0 auto;
 }
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo{
+    padding: 30px 50px;
+}
+
+.logo img{
+    max-height: 20px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 344px;
+}
+
+
+.menu-btn p{
+    text-align: center;
+}
+
+
+/* !!! comment éviter le décalage? */
+.menu-btn:hover{
+    border-top: 2px var(--main-color) solid;
+    color: var(--main-color);
+}
+
 
 .main-container {
     width: 100%;
@@ -129,6 +167,8 @@ a {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -161,7 +201,13 @@ a {
     }
 }
 
+
 /* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-    /* ... */
+
+@media not (min-width: 768px){
+
+    /* !!! à enlever lors de l'étape responsive */
+    body{
+        background-color: red; 
+    }
 }
