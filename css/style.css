@@ -14,6 +14,7 @@
     color: var(--main-color);
 }
 
+/*  !!! flex utile ici?*/
 body {
     display: flex;
     justify-content: center;
@@ -70,20 +71,23 @@ header{
     font-size: 24px;
 }
 
-.search{
+.bar{
     display: flex;
-    justify-content: space-between;
-    border-radius: 15px;
     height: 50px;
-    width: 377px;
     padding: 30px 0;
 }
 
-.search *{
+.bar *{
     text-align: center;
     font-size: 18px;
     font-weight: bold;
 }
+/* !!! voir filter btn pour hauteur */
+.search{
+    justify-content: space-between;
+    width: 377px;
+}
+
 /* !!! revoir border-collapse si plus élégant? */
 .search-pin{
     background-color: var(--main-bg-color);
@@ -95,7 +99,7 @@ header{
 /* !!! moyen de ne pas avoir à utiliser height?*/
 .search-form{
     height: 100%;
-    border: 1px var(--filter-bg-color) solid;
+    border: 1px var(--main-bg-color) solid;
     border-collapse: collapse;
     height: 46px;
 }
@@ -103,7 +107,6 @@ header{
 .search-form:focus{
     outline: none;
 }
-
 
 .search-btn{
     background-color: var(--main-color);
@@ -114,6 +117,24 @@ header{
 
 .search-btn p{
     color: white;
+}
+
+/* !!!écart entre "filtre" et boutons */
+.filter .btn{
+    border: 2px var(--main-color) solid;
+    border-radius: 25px;
+    display: flex;
+    height: 50px;  
+    padding: 0px 10px;
+    margin: auto 10px;
+}
+
+.filter .btn *{
+    margin: auto 10px;
+}
+
+.filter .btn:hover{
+    background-color: var(--filter-bg-color);
 }
 
 .section-title {
