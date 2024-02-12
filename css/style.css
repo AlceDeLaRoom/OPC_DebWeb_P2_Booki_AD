@@ -9,6 +9,7 @@
     --filter-bg-color: #DEEBFF;
 }
 
+/* !!! centrer icones verticalement*/
 .fa-solid {
     color: var(--main-color);
 }
@@ -21,6 +22,17 @@ body {
     margin: 0 auto;
 }
 
+.main-container {
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -29,7 +41,7 @@ header{
 }
 
 .logo{
-    padding: 30px 50px;
+    padding: 30px 0px;
 }
 
 .logo img{
@@ -39,33 +51,69 @@ header{
 .menu{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 344px;
+    justify-content: space-between;
+    width: 244px;
+    padding: 30px 0px;
 }
-
-
+/* !!! hauteur à revoir */
 .menu-btn p{
     text-align: center;
 }
 
-
-/* !!! comment éviter le décalage? */
 .menu-btn:hover{
     border-top: 2px var(--main-color) solid;
+    margin-top: -2px;
     color: var(--main-color);
 }
 
-
-.main-container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 50px;
-    box-sizing: border-box;
+.headline h1{
+    font-size: 24px;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+.search{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    height: 50px;
+    width: 377px;
+    padding: 30px 0;
+}
+
+.search *{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* !!! revoir border-collapse si plus élégant? */
+.search-pin{
+    background-color: var(--main-bg-color);
+    border-radius: 15px 0px 0px 15px;
+    border-collapse: collapse;
+    width: 50px;
+}
+
+/* !!! moyen de ne pas avoir à utiliser height?*/
+.search-form{
+    height: 100%;
+    border: 1px var(--filter-bg-color) solid;
+    border-collapse: collapse;
+    height: 46px;
+}
+
+.search-form:focus{
+    outline: none;
+}
+
+
+.search-btn{
+    background-color: var(--main-color);
+    border-radius: 0px 15px 15px 0px;
+    border-collapse: collapse;
+    width: 132px;
+}
+
+.search-btn p{
+    color: white;
 }
 
 .section-title {
