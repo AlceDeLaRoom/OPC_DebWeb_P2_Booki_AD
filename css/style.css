@@ -17,21 +17,15 @@
 
 /*  !!! flex utile ici?*/
 body {
-    display: flex;
-    justify-content: center;
     max-width: 1440px;
     min-width: 320px;
     margin: 0 auto;
-}
-
-.main-container {
-    width: 100%;
     padding: 0 50px;
     box-sizing: border-box;
 }
 
+
 h1 {
-    margin: 0;
     font-size: 22px;
 }
 
@@ -41,7 +35,7 @@ a {
 }
 
 p{
-    font-size: 14px;
+    font-size: 16px;
 }
 
 h3{
@@ -51,7 +45,6 @@ h3{
 header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     height: 80px;
 }
 
@@ -68,23 +61,26 @@ header{
     flex-direction: row;
     justify-content: space-between;
     width: 244px;
-    padding: 30px 0px;
 }
-/* !!! hauteur à revoir */
+
 .menu-btn p{
     text-align: center;
 }
 
+.menu-btn{
+    border-top: 2px transparent solid;
+}
+
+/* !!! margin fait disparaitre la bordure */
 .menu-btn:hover{
     border-top: 2px var(--main-color) solid;
-    margin-top: -2px;
     color: var(--main-color);
 }
 
 .bar{
     display: flex;
     height: 50px;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 
 .bar *{
@@ -95,7 +91,7 @@ header{
 /* !!! voir filter btn pour hauteur */
 .search{
     justify-content: space-between;
-    width: 377px;
+    width: 380px;
 }
 
 /* !!! revoir border-collapse si plus élégant? */
@@ -106,12 +102,19 @@ header{
     width: 50px;
 }
 
+.search-pin .fa-solid{
+    color: black;
+    margin: 15px;
+}
+
 /* !!! moyen de ne pas avoir à utiliser height?*/
 .search-form{
-    height: 100%;
-    border: 1px var(--main-bg-color) solid;
+    border: none;
+    border-top: 1px var(--main-bg-color) solid;
+    border-bottom: 1px var(--main-bg-color) solid;
     border-collapse: collapse;
     height: 46px;
+    width: 195px;
 }
 
 .search-form:focus{
@@ -122,7 +125,7 @@ header{
     background-color: var(--main-color);
     border-radius: 0px 15px 15px 0px;
     border-collapse: collapse;
-    width: 132px;
+    width: 135px;
 }
 
 .search-btn p{
@@ -146,19 +149,40 @@ header{
     background-color: var(--filter-bg-color);
 }
 
-.card {
+.info{
+    display: flex;
+    height: 20px;
+    padding: 10px 0;
+}
+
+.info *{
+    height: 100%;
+    margin: auto 0;
+}
+
+.info i{
+    width: 20px;
+    border: 1px var(--main-border-color) solid;
+    border-radius: 10px;
+}
+
+.card{
     background-color: white;
     border-radius: 20px;
     padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
-.card img {
+.card:hover{
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.05));
+}
+
+.card img{
     object-fit: cover;
 }
 
-.card-title {
-    font-size: 16px;
+.card p{
+    font-size: 14px;
 }
 
 .euro {
@@ -212,15 +236,13 @@ header{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
-
+/* !!! revoir pour les textes quand on réduit la largeur*/
 .hebergements-cards .card-content {
     height: 45%;
     padding-left: 15px;
     display: flex;
     flex-direction: column;
 }
-
-
 
 
 /****** Populaires ***********/
@@ -268,7 +290,59 @@ header{
     margin-bottom: 5px;
 }
 
+/* Activities */
 
+.activities{
+    padding: 30px;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.activity-cards{
+    display: flex;
+    justify-content: space-between;
+}
+
+.activity-cards .card{
+    width: 23%;
+    height: 440px;
+    padding: 0;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.2));
+}
+
+.activity-cards .card:hover{
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.activities img{
+    width: 100%;
+    height: 380px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.activities .card-content{
+    margin: 0 20px;
+}
+
+
+footer{
+    background-color: var(--main-border-color);
+    height: 164px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div{
+    width:30%;
+    margin: 0px 20px;
+}
+
+footer div *{
+    padding: 15px auto;
+}
 
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
