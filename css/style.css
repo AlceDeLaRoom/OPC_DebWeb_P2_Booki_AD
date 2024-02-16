@@ -15,18 +15,12 @@
     color: var(--main-color);
 }
 
-/*  !!! flex utile ici?*/
 body {
     max-width: 1440px;
     min-width: 320px;
     margin: 0 auto;
     padding: 0 50px;
     box-sizing: border-box;
-}
-
-
-h1 {
-    font-size: 22px;
 }
 
 a {
@@ -36,6 +30,10 @@ a {
 
 p{
     font-size: 16px;
+}
+
+h1 {
+    font-size: 22px;
 }
 
 h3{
@@ -71,7 +69,6 @@ header{
     border-top: 2px transparent solid;
 }
 
-/* !!! margin fait disparaitre la bordure */
 .menu-btn:hover{
     border-top: 2px var(--main-color) solid;
     color: var(--main-color);
@@ -80,7 +77,7 @@ header{
 .bar{
     display: flex;
     height: 50px;
-    padding: 20px 0;
+    margin: 20px 0;
 }
 
 .bar *{
@@ -88,32 +85,30 @@ header{
     font-size: 18px;
     font-weight: bold;
 }
-/* !!! voir filter btn pour hauteur */
+
 .search{
     justify-content: space-between;
     width: 380px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px var(--main-bg-color) solid;
 }
 
-/* !!! revoir border-collapse si plus élégant? */
 .search-pin{
     background-color: var(--main-bg-color);
     border-radius: 15px 0px 0px 15px;
     border-collapse: collapse;
     width: 50px;
 }
-
+/* moyen de le mettre au milieu différemment? */
 .search-pin .fa-solid{
     color: black;
     margin: 15px;
 }
-
 /* !!! moyen de ne pas avoir à utiliser height?*/
 .search-form{
     border: none;
-    border-top: 1px var(--main-bg-color) solid;
-    border-bottom: 1px var(--main-bg-color) solid;
     border-collapse: collapse;
-    height: 46px;
     width: 195px;
 }
 
@@ -123,6 +118,7 @@ header{
 
 .search-btn{
     background-color: var(--main-color);
+    border: 1px var(--main-color) solid;
     border-radius: 0px 15px 15px 0px;
     border-collapse: collapse;
     width: 135px;
@@ -131,6 +127,11 @@ header{
 .search-btn p{
     color: white;
     margin: 15px 0px;
+}
+
+.filter-btn{
+    height: 50px;
+    display: flex;
 }
 
 .filter .btn{
@@ -164,6 +165,7 @@ header{
     width: 20px;
     border: 1px var(--main-border-color) solid;
     border-radius: 10px;
+    margin-right: 10px;
 }
 
 .card{
@@ -209,7 +211,6 @@ header{
 /****** Hebergements ***********/
 .hebergements {
     display: flex;
-    justify-self: space-between;
     flex-direction: column;
     width: 65%;
 }
@@ -294,7 +295,6 @@ header{
 
 .activities{
     padding: 30px;
-    height: 560px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -307,7 +307,7 @@ header{
 
 .activity-cards .card{
     width: 23%;
-    height: 440px;
+    height: 380px;
     padding: 0;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.2));
 }
@@ -318,21 +318,24 @@ header{
 
 .activities img{
     width: 100%;
-    height: 380px;
+    height: 300px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
+
+/* !!! alignement vertical */
 .activities .card-content{
+    height: 80px;
     margin: 0 20px;
 }
-
 
 footer{
     background-color: var(--main-border-color);
     height: 164px;
     display: flex;
     justify-content: space-between;
+    margin-top: 50px;
 }
 
 footer div{
@@ -345,12 +348,20 @@ footer div *{
 }
 
 
-/* Le code ci-dessous correspond à la version responsive uniquement */
+/* ::: filtre retour à la ligne
+    populaire en dessous de hebergement OK
+    !!! vérifier populaires
+    image et carte d'activitées réduits en hauteurs OK*/
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
 
+    .filter{
+        height: 100px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
     .hebergements-and-populaires {
         flex-direction: column;
@@ -382,6 +393,15 @@ footer div *{
     .populaires-cards .card-subtitle {
         font-size: 13px;
     }
+
+    .activity-cards .card{
+        height: 280px;
+    }
+    
+    .activities img{
+        height: 200px;
+    }
+
 }
 
 
@@ -393,4 +413,16 @@ footer div *{
     body{
         background-color: red; 
     }
+
+    .search-btn{
+        width: 50px;
+        border-radius: 15px;
+        z-index: 2;
+    }
+
+    .search-btn p{
+        display: none;
+    }
+
+
 }
