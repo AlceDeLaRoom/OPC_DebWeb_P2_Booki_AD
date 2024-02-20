@@ -42,7 +42,7 @@ h2 {
 }
 
 h3{
-    font-size: 16px;
+    font-size: 18px;
     margin: auto 0;
 }
 
@@ -61,7 +61,7 @@ header{
 
 .bar{
     display: flex;
-    margin: 20px 0;
+    margin: 35px 0;
 }
 
 .bar *{
@@ -107,11 +107,13 @@ header{
 /* moyen de le mettre au milieu différemment? */
 .search-pin i{
     color: black;
-    margin-top: 17px;
+    font-size: 22px;
+    margin-top: 14px;
 }
 
 .search-form{
     border: none;
+    width: 195px;
 }
 
 .search-form:focus{
@@ -125,17 +127,24 @@ header{
     width: 135px;
 }
 
-.search-btn p{
+.search-btn i{
+    display: none;
+    font-size: 22px;
+}    
+
+.search-btn *{
     color: white;
-    margin: 15px 0px;
+    margin: 13px 0px;
 }
 
 .filter-title{
-    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .filter-btn{
+    width: 728px;
     display: flex;
+    justify-content: space-between;
 }
 
 .filter .btn{
@@ -143,12 +152,15 @@ header{
     border-radius: 27px;
     display: flex;
     height: 50px;  
-    margin: 5px;
-    padding: 0px 20px;
+    padding: 0 10px;
+}
+
+.filter .btn i{
+    font-size: 22px;
 }
 
 .filter .btn *{
-    margin: auto 15px auto 0px;
+    margin: auto 10px;
 }
 
 .filter .btn:hover{
@@ -157,21 +169,25 @@ header{
 
 .info{
     display: flex;
-    height: 20px;
-    padding: 10px 0;
+    height: auto;
+    margin-bottom: 35px;
 }
 
-.info *{
-    height: 100%;
+.info p{
     margin: auto 0;
 }
 
-.info i{
-    width: 20px;
+.info .icon{
+    height: 24px;
+    min-width: 24px;
     border: 1px var(--main-border-color) solid;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-right: 10px;
     text-align: center;
+}
+
+.info i{
+    font-size: 10px;
 }
 
 
@@ -253,6 +269,15 @@ header{
     height: 45%;
 }
 
+.hebergements-cards .card-title {
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.hebergements-cards .card-rating {
+    margin-bottom: 10px;
+}
+
 
 .showMore{
     margin-top: 30px;
@@ -291,7 +316,8 @@ header{
 .popular-card .card-content {
     width: 67%;
 }
-.card-title {
+
+.popular-card .card-title {
     margin-top: 10px;
     margin-bottom: 4px;
 }
@@ -300,7 +326,7 @@ header{
     margin: 0;
 }
 
-.card-rating {
+.popular-card .card-rating {
     margin-bottom: 5px;
 }
 
@@ -353,7 +379,7 @@ footer{
 }
 
 footer div{
-    width:30%;
+    width: 30%;
     margin: 20px;
 }
 
@@ -369,16 +395,20 @@ footer div{
 @media (max-width: 1024px) {
 
     body{
-        padding: 0px;
+        padding: 0 20px;
     }
 
     .filter{
         flex-direction: column;
         align-items: flex-start;
     }
+    .filter .btn{
+        margin-top: 20px;
+    }
 
     .hebergements-and-populaires {
         flex-direction: column;
+        margin: auto -20px;
     }
 
     .hebergements {
@@ -408,12 +438,20 @@ footer div{
         font-size: 13px;
     }
 
+    .activities{
+        margin: auto -20px;
+    }
+
     .activity-card{
         height: 280px;
     }
     
     .activities img{
         height: 200px;
+    }
+
+    footer{
+        margin: auto -20px;
     }
 
 }
@@ -427,6 +465,7 @@ footer div{
     header{
         flex-direction: column;
         align-items: center;
+        margin: 0 -20px;
     }
 
     .menu{
@@ -445,34 +484,43 @@ footer div{
     }
 
     .search{
-        width: 94%;
+        width: 100%;
+    }
+
+    .search-form{
+        width: 80%;
     }
 
     .search-btn{
         width: 50px;
         border-radius: 15px;
+        filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.3));
     }
 
     .search-btn p{
         display: none;
     }    
+
+    .search-btn i{
+        display: block;
+    }    
     
     .filter-btn{
+        width: 100%;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .filter .btn{
-        margin: 10px auto;
-        width: 35%;
-    }
-
-    .filter .btn p{
-        font-size: 14px;
+        width: 42%;
     }
 
     .hebergements-and-populaires {
         flex-direction: column-reverse;
+    }
+
+    .populaires, .hebergements, .activities{
+        padding: 30px 20px;
     }
 
     .populaires{
@@ -485,23 +533,40 @@ footer div{
 
     .hebergements-cards, .activity-cards, .populaires-cards{
         flex-direction: column;
+        align-items: center;
     }
 
     .popular-card{
         height: 146px;
     }
 
-    .accommodation-card{
+    .accommodation-card, .activity-card{
         height: 208px;
     }
 
-    .activity-card{
-        height: 375px;
+    .card {
+        width: 98%;
+    }
+
+    .activities{
+        margin: auto -10px;
+    }
+
+    .activity-card img{
+        height: 150px;
+    }
+
+    .activity-card img[src*="florian-wehde"]{
+        object-position: 50% 10%;
+    }
+
+    footer{
+        flex-direction: column;
     }
     
-
-    .card {
-        width: 90%;
+    footer div{
+        width:100%;
+        margin: 30px;
     }
 
 }
