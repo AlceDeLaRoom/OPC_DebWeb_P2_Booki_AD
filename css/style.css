@@ -40,15 +40,12 @@ h2 {
     margin: auto 0;
 }
 
-h3 {
+h3, h4{
     font-size: 18px;
     margin: auto 0;
 }
 
-h4 {
-    font-size: 18px;
-    margin: auto 0;
-}
+
 
 /***** header/nav *****/
 header {
@@ -390,11 +387,7 @@ footer div {
 @media (max-width: 1024px) { /* Medium devices (tablets, less/equal than 1024px) */
 
     body {
-        padding: 0 20px; /* don't forget mobile's properties */
-    }
-
-    .activities, footer, .accommodations-and-populars {
-        margin: auto -20px;
+        padding: 0 50px;
     }
 
     .accommodations, .populars {
@@ -456,6 +449,10 @@ footer div {
 
                                 /****** Media queries ***********/
 @media not (min-width: 768px){ /* Small devices (phones, less than 768px) */
+
+    body {
+        padding: 0 20px;
+    }
 
     header {
         flex-direction: column;
@@ -530,6 +527,7 @@ footer div {
     }
 
     .accommodations-and-populars {
+        margin: auto -20px;
         flex-direction: column-reverse;
     }
 
@@ -589,6 +587,7 @@ footer div {
 
     footer {
         flex-direction: column;
+        margin: auto -20px;
     }
     
     footer div {
